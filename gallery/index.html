@@ -3,39 +3,64 @@
 <title>Strange Attractor Gallery</title>
 <style>
 body {
-  background: #111; color: #eee;
-  font-family: monospace;
+  background: #000; color: #ccc;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 20px;
+}
+h1 { text-align: center; color: #fff; }
+h2 {
+  color: #888; border-bottom: 1px solid #333;
+  padding-bottom: 8px; margin-top: 40px;
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px; padding: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px; padding: 10px 0;
 }
 .card img {
   width: 100%; border-radius: 4px;
 }
-h1 { text-align: center; }
+.card p {
+  font-size: 11px; color: #666;
+  margin: 4px 0; text-align: center;
+}
 </style></head><body>
-<h1>Top 20 Strange Attractors</h1>
+<h1>Strange Attractor Gallery</h1>
+<h2>Random Search (top 15)</h2>
 <div class="grid">
-  <div class="card"><img src="1192683626a4960e.png"></div>
-  <div class="card"><img src="d9397bf53ea51795.png"></div>
-  <div class="card"><img src="f8fb388c91405035.png"></div>
-  <div class="card"><img src="ec23af5836cea6a3.png"></div>
-  <div class="card"><img src="9d29b2703ef4be92.png"></div>
-  <div class="card"><img src="3248fcc3e89074f5.png"></div>
-  <div class="card"><img src="47f8393ac4e4377b.png"></div>
-  <div class="card"><img src="cd898041058940c4.png"></div>
-  <div class="card"><img src="0434fa1ae0bf3f55.png"></div>
-  <div class="card"><img src="2a368abb50274d71.png"></div>
-  <div class="card"><img src="983263d065c049df.png"></div>
-  <div class="card"><img src="cb23bea1b9fefe20.png"></div>
-  <div class="card"><img src="8266d582f817ad8c.png"></div>
-  <div class="card"><img src="6417f149698668ea.png"></div>
-  <div class="card"><img src="d46366b86f122bfd.png"></div>
-  <div class="card"><img src="7ecd89e5582041b4.png"></div>
-  <div class="card"><img src="ccad538ae8d93bb0.png"></div>
-  <div class="card"><img src="202f41e91179de45.png"></div>
-  <div class="card"><img src="4ef98db9df1ceb8e.png"></div>
-  <div class="card"><img src="09893b1e62d5d9e9.png"></div>
-</div></body></html>
+<div class="card"><img src="ba31808666be54d3.png"><p>λ₁=0.250 dim=2.23</p></div>
+<div class="card"><img src="d5021b4954c1c363.png"><p>λ₁=0.265 dim=2.19</p></div>
+<div class="card"><img src="077a9a0269b0a63c.png"><p>λ₁=0.507 dim=2.25</p></div>
+<div class="card"><img src="e83c850009719e47.png"><p>λ₁=0.329 dim=2.10</p></div>
+<div class="card"><img src="7d2faf7de27dc8c2.png"><p>λ₁=0.357 dim=2.10</p></div>
+<div class="card"><img src="1ff4017ed1588f0c.png"><p>λ₁=0.295 dim=2.08</p></div>
+<div class="card"><img src="0c00d1bc183d16b2.png"><p>λ₁=0.310 dim=2.06</p></div>
+<div class="card"><img src="283b7a7eebb370ae.png"><p>λ₁=0.347 dim=2.05</p></div>
+<div class="card"><img src="68f013082c1d8e8e.png"><p>λ₁=0.314 dim=2.05</p></div>
+<div class="card"><img src="63bb44cba1b6c2fd.png"><p>λ₁=0.206 dim=2.08</p></div>
+<div class="card"><img src="e4fb52163e4e05d6.png"><p>λ₁=0.216 dim=2.05</p></div>
+<div class="card"><img src="edc1ea25cebb6caf.png"><p>λ₁=0.233 dim=2.03</p></div>
+<div class="card"><img src="9c3b984e74120655.png"><p>λ₁=0.188 dim=2.07</p></div>
+<div class="card"><img src="8965ee39fae923ad.png"><p>λ₁=0.562 dim=2.10</p></div>
+<div class="card"><img src="c704296fc4565264.png"><p>λ₁=0.145 dim=2.11</p></div>
+</div>
+<h2>Evolutionary Search (top 15)</h2>
+<div class="grid">
+<div class="card"><img src="d02646ac747a8a97.png"><p>λ₁=0.316 dim=2.32</p></div>
+<div class="card"><img src="936f6c819c5b441b.png"><p>λ₁=0.383 dim=2.26</p></div>
+<div class="card"><img src="148ff2fad931174a.png"><p>λ₁=0.301 dim=2.16</p></div>
+<div class="card"><img src="70472e75cf60c548.png"><p>λ₁=0.289 dim=2.14</p></div>
+<div class="card"><img src="e1c24fa641f01c18.png"><p>λ₁=0.269 dim=2.12</p></div>
+<div class="card"><img src="1579769784e3402f.png"><p>λ₁=0.296 dim=2.11</p></div>
+<div class="card"><img src="16c611a1550fa498.png"><p>λ₁=0.325 dim=2.09</p></div>
+<div class="card"><img src="8007cb051f6e6e9b.png"><p>λ₁=0.237 dim=2.10</p></div>
+<div class="card"><img src="3985c7b0583fffaa.png"><p>λ₁=0.326 dim=2.08</p></div>
+<div class="card"><img src="070e5335d2474f1c.png"><p>λ₁=0.491 dim=2.13</p></div>
+<div class="card"><img src="f6cac87387972d4f.png"><p>λ₁=0.187 dim=2.11</p></div>
+<div class="card"><img src="6700df70354d6938.png"><p>λ₁=0.462 dim=2.09</p></div>
+<div class="card"><img src="71e91d4a627eebdb.png"><p>λ₁=0.250 dim=2.04</p></div>
+<div class="card"><img src="88c72855fb1bf42d.png"><p>λ₁=0.261 dim=2.03</p></div>
+<div class="card"><img src="02fcb2fc0feb3671.png"><p>λ₁=0.209 dim=2.03</p></div>
+</div>
+
+</body></html>

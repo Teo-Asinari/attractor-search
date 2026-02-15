@@ -7,7 +7,7 @@ use rand::Rng;
 use std::path::Path;
 
 const COEFF_RANGE: f64 = 2.0;
-const TRAJ_SAMPLE: usize = 2000;
+const TRAJ_SAMPLE: usize = 50000;
 const TRAJ_DT: f64 = 0.01;
 
 /// Random coefficient vector in [-range, range].
@@ -27,6 +27,7 @@ fn report(
     data: &crate::lyapunov::LyapData,
     results_dir: &Path,
     found: usize,
+    method: &str,
 ) {
     let hash = catalog::coeff_hash(c);
     println!(
@@ -44,6 +45,7 @@ fn report(
         data.spectrum,
         data.ky_dim,
         &traj,
+        method,
     );
     if let Err(e) = catalog::save(results_dir, &entry)
     {
@@ -71,6 +73,7 @@ pub fn random_search(
                     &data,
                     results_dir,
                     found,
+                    "random",
                 );
             }
             _ => {}
@@ -126,6 +129,7 @@ pub fn evolve_search(
                         &data,
                         results_dir,
                         found,
+                        "evolve",
                     );
                 }
             }

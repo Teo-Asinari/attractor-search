@@ -13,6 +13,8 @@ pub struct Entry {
     pub spectrum: [f64; 3],
     pub ky_dim: f64,
     pub trajectory: Vec<[f64; 3]>,
+    #[serde(default)]
+    pub method: String,
 }
 
 impl Entry {
@@ -21,6 +23,7 @@ impl Entry {
         spectrum: [f64; 3],
         ky_dim: f64,
         traj: &[State],
+        method: &str,
     ) -> Self {
         let id = coeff_hash(coeffs);
         Entry {
@@ -29,6 +32,7 @@ impl Entry {
             spectrum,
             ky_dim,
             trajectory: traj.to_vec(),
+            method: method.to_string(),
         }
     }
 }
@@ -88,6 +92,7 @@ pub fn load_all(
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::ode::NCOEFFS;
     use std::path::PathBuf;
 
     #[test]
@@ -99,6 +104,7 @@ mod tests {
             [0.9, 0.0, -14.0],
             2.06,
             &traj,
+            "test",
         );
         let dir = PathBuf::from("/tmp/attractor_test");
         let _ = std::fs::remove_dir_all(&dir);
