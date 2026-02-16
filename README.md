@@ -6,6 +6,96 @@ of 3D quadratic polynomial ODE systems, classifies
 dynamics via Lyapunov exponents, catalogues novel
 chaotic objects.
 
+## Background
+
+If this is unfamiliar territory, here's a short primer.
+
+### Dynamical systems
+
+A dynamical system is a rule that tells you how something
+changes over time. You have some *state* — a set of numbers
+describing "where you are" — and a rule that says, given
+where you are now, here's where you'll be next.
+
+The simplest example: a ball rolling in a bowl. The state
+is the ball's position and velocity. The rule is physics.
+At every moment, the current state determines what happens
+next. The ball traces out a path through the space of all
+possible states — this path is called a *trajectory*, and
+the space itself is called *phase space*.
+
+Mathematically, these systems are expressed as differential
+equations. This project searches over 3D quadratic
+polynomial ODEs — systems of the form:
+
+```
+dx/dt = a₀ + a₁x + a₂y + a₃z + a₄x² + a₅y² + a₆z² + a₇xy + a₈xz + a₉yz
+dy/dt = b₀ + b₁x + b₂y + b₃z + b₄x² + b₅y² + b₆z² + b₇xy + b₈xz + b₉yz
+dz/dt = c₀ + c₁x + c₂y + c₃z + c₄x² + c₅y² + c₆z² + c₇xy + c₈xz + c₉yz
+```
+
+Each equation has 10 terms (1 constant + 3 linear + 6
+quadratic), so the full system is defined by 30 real-valued
+coefficients. The search space is all possible assignments
+of these coefficients in [-2, 2]. For reference, the
+classic Lorenz system is a single point in this
+30-dimensional space — most coefficients zero, a handful
+set to specific values (10, 28, 8/3).
+
+Dynamical systems of this kind describe everything from
+planetary orbits to population dynamics to weather.
+
+### Attractors
+
+Many systems, no matter where you start them, eventually
+settle into the same long-term behavior. The thing they
+settle into is the *attractor*. There are a few types:
+
+- **Fixed point** — the system reaches a single state and
+  stays there. A ball at the bottom of a bowl.
+- **Limit cycle** — the system settles into a repeating
+  loop. A heartbeat, a pendulum.
+- **Strange attractor** — the system never repeats, but
+  never leaves a bounded region. The trajectory folds and
+  stretches back on itself forever, tracing out an
+  infinitely detailed geometric structure — a fractal.
+
+### What makes strange attractors "strange"
+
+Two things:
+
+1. **Sensitive dependence on initial conditions.** Two
+   trajectories that start incredibly close together
+   diverge exponentially fast. This is "chaos." The rate
+   of divergence is measured by the *Lyapunov exponent*
+   (λ₁). Positive λ₁ = chaotic.
+
+2. **Fractal structure.** The attractor has a non-integer
+   dimension. It's not a line (dimension 1) or a surface
+   (dimension 2) — it's something in between, like 2.23.
+   This is the *Kaplan-Yorke dimension*. It means the
+   attractor has structure at every scale, infinitely
+   nested.
+
+So the system is simultaneously *deterministic* (the rules
+completely determine the future) and *unpredictable* (tiny
+measurement errors grow exponentially). This is why
+long-term weather forecasting is fundamentally limited —
+the atmosphere is a chaotic dynamical system.
+
+### Kaplan-Yorke dimension in plain terms
+
+The KY dimension tells you how much of the available space
+the attractor fills. These systems live in 3D, so the
+trajectory *could* fill a volume (dimension 3), but
+attractors are constrained. Dimension 1 is a thin curve.
+Dimension 2 is a surface. A strange attractor lands in
+between — a surface folded so aggressively it partially
+fills a volume. A dimension of 2.23 means a 2D sheet
+folded until it's 23% of the way toward filling 3D space.
+Higher dimension = more folds, more structure, more
+intricate geometry.
+
 ## Why
 
 Strange attractors live on a fractal boundary
