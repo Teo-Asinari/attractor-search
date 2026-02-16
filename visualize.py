@@ -113,7 +113,7 @@ def gen_html(sections):
     for title, items in sections:
         cards = ""
         for a in items:
-            fname = f"{a['id']:016x}.png"
+            fname = f"{a['id']:016x}.jpg"
             cards += (
                 f'<div class="card">'
                 f'<img src="{fname}">'
@@ -210,7 +210,7 @@ def main():
     # Render one at a time to save memory.
     all_top = top_r + top_e
     for i, meta in enumerate(all_top, 1):
-        fname = f"{meta['id']:016x}.png"
+        fname = f"{meta['id']:016x}.jpg"
         out = os.path.join(GALLERY, fname)
         print(
             f"[{i:2d}/{len(all_top)}] "
