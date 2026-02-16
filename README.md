@@ -67,6 +67,15 @@ Each entry is tagged with its search method.
 Gallery renders the top 15 from each, ranked by
 fractal dimension + moderate λ₁.
 
+### Sample discoveries
+
+| Random search | | Evolutionary search | |
+|:---:|:---:|:---:|:---:|
+| ![](gallery/ba31808666be54d3.jpg) | ![](gallery/077a9a0269b0a63c.jpg) | ![](gallery/d02646ac747a8a97.jpg) | ![](gallery/936f6c819c5b441b.jpg) |
+| λ₁=0.250 dim=2.23 | λ₁=0.507 dim=2.25 | λ₁=0.316 dim=2.32 | λ₁=0.383 dim=2.26 |
+
+See `gallery/index.html` for the full top-30 gallery.
+
 ## Novelty
 
 These systems use arbitrary real-valued
